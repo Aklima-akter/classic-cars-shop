@@ -15,7 +15,7 @@ const AddProducts = () => {
   }
   const handleAddProducts = (e) => {
     const product = { ...addProduct }
-    fetch('http://localhost:5000/products', {
+    fetch('https://vast-bayou-43235.herokuapp.com/products', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

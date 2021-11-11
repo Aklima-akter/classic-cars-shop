@@ -10,7 +10,7 @@ import { Grid } from '@mui/material'
 
 const ManageProduct = ({ allProduct, allProducts, setAllProducts }) => {
   const handleDeleteProducts = (id) => {
-    const url = `http://localhost:5000/products/${id}`
+    const url = `https://vast-bayou-43235.herokuapp.com/products/${id}`
     fetch(url, {
       method: 'DELETE',
     })

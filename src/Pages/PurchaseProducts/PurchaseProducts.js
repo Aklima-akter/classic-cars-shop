@@ -21,7 +21,7 @@ const PurchaseProducts = () => {
 
   const { id } = useParams()
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://vast-bayou-43235.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
   }, [id])
@@ -41,7 +41,7 @@ const PurchaseProducts = () => {
     bookingProduct.email = user.email
     bookingProduct.name = product.name
     bookingProduct.price = product.price
-    fetch('http://localhost:5000/allBooking', {
+    fetch('https://vast-bayou-43235.herokuapp.com/allBooking', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

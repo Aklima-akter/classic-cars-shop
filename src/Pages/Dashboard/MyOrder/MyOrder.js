@@ -9,7 +9,7 @@ const MyOrder = () => {
   const [allBooking, setAllBooking] = useState([])
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allBooking/${user?.email}`)
+    fetch(`https://vast-bayou-43235.herokuapp.com/allBooking/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAllBooking(data))
   }, [user?.email])
@@ -24,7 +24,7 @@ const MyOrder = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        const url = `http://localhost:5000/allBooking/${id}`
+        const url = `https://vast-bayou-43235.herokuapp.com/allBooking/${id}`
         fetch(url, {
           method: 'DELETE',
         })
