@@ -72,7 +72,9 @@ const Navigation = () => {
             </Box>
           ) : (
             <Link className={navItem} to="/login">
-              <Button color="success">Login</Button>
+              <Button style={{ backgroundColor: 'white' }} color="success">
+                Login
+              </Button>
             </Link>
           )}
         </Toolbar>

@@ -28,11 +28,11 @@ function App() {
             <Route path="/products">
               <Product></Product>
             </Route>
-            <PrivateRoute path="/allProducts">
+            <Route path="/allProducts">
               <Navigation></Navigation>
               <AllProducts></AllProducts>
               <Footer></Footer>
-            </PrivateRoute>
+            </Route>
             <PrivateRoute path="/purchaseProducts/:id">
               <Navigation></Navigation>
               <PurchaseProducts></PurchaseProducts>

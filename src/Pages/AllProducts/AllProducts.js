@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Grid, Container } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
@@ -13,7 +13,7 @@ const AllProducts = () => {
       .then((data) => setAllProducts(data))
   }, [])
   return (
-    <>
+    <Container>
       <Box sx={{ flexGrow: 1 }}>
         <Typography
           sx={{ m: 5, textAlign: 'center', fontWeight: '600' }}
@@ -36,7 +36,7 @@ const AllProducts = () => {
           ))}
         </Grid>
       </Box>
-    </>
+    </Container>
   )
 }
 

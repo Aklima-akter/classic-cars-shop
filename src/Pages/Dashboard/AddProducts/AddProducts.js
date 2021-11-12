@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import swal from 'sweetalert'
+import { Container } from '@mui/material'
 
 const AddProducts = () => {
   const [addProduct, setAddProduct] = useState({})
@@ -40,7 +41,7 @@ const AddProducts = () => {
   }
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <Container style={{ textAlign: 'center' }}>
       <h2>Add products</h2>
       <form onSubmit={handleAddProducts}>
         <TextField
@@ -81,7 +82,7 @@ const AddProducts = () => {
           Add Product
         </Button>
       </form>
-    </div>
+    </Container>
   )
 }
 
