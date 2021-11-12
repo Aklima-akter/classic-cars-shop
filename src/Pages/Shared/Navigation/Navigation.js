@@ -11,7 +11,7 @@ import useAuth from './../../../hooks/useAuth'
 import { Button } from '@mui/material'
 
 const Navigation = () => {
-  const { user, logOut } = useAuth()
+  const { user } = useAuth()
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ bgcolor: 'success.main' }}>
@@ -54,32 +54,18 @@ const Navigation = () => {
             Explore
           </Link>
           {user?.email ? (
-            <Box>
-              <Link
-                style={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  marginRight: '15px',
-                  fontWeight: 600,
-                  fontSize: 18,
-                }}
-                to="/dashboard"
-              >
-                Dashboard
-              </Link>
-              <Button
-                style={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  marginRight: '15px',
-                  fontWeight: 600,
-                  fontSize: 18,
-                }}
-                onClick={logOut}
-              >
-                Logout
-              </Button>
-            </Box>
+            <Link
+              style={{
+                color: 'white',
+                textDecoration: 'none',
+                marginRight: '15px',
+                fontWeight: 600,
+                fontSize: 18,
+              }}
+              to="/dashboard"
+            >
+              Dashboard
+            </Link>
           ) : (
             <Link
               style={{

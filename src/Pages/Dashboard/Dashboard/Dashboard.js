@@ -24,7 +24,7 @@ import ManageProducts from '../ManageProducts/ManageProducts'
 const drawerWidth = 200
 
 function Dashboard(props) {
-  const { admin } = useAuth()
+  const { admin, user, logOut } = useAuth()
   const { window } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
   let { path, url } = useRouteMatch()
@@ -35,7 +35,37 @@ function Dashboard(props) {
   const drawer = (
     <div>
       <Toolbar />
+      <Link
+        style={{
+          textDecoration: 'none',
+          marginLeft: '40px',
+        }}
+        to="/home"
+      >
+        <Button
+          style={{ fontWeight: 500, fontSize: 18, marginBottom: '10px' }}
+          variant="outlined"
+          color="success"
+        >
+          Home
+        </Button>
+      </Link>
       <Divider />
+      {user.email && (
+        <Button
+          style={{
+            textDecoration: 'none',
+            marginRight: '15px',
+            fontWeight: 600,
+            fontSize: 18,
+          }}
+          variant="contained"
+          color="success"
+          onClick={logOut}
+        >
+          Logout
+        </Button>
+      )}
       {!admin && (
         <Box>
           <Link style={{ textDecoration: 'none' }} to="/allProducts">

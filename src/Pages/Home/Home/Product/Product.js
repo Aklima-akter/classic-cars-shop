@@ -25,7 +25,7 @@ const Product = ({ product }) => {
             {name.slice(0, 20)}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description.slice(0, 100)}
+            {description.slice(0, 80)}
           </Typography>
           <Typography gutterBottom variant="h5" component="div">
             ${price}

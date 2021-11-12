@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Typography, Box, Grid } from '@mui/material'
+import { Typography, Box, Grid, Container } from '@mui/material'
 import Review from '../Home/Review/Review'
 
 const Reviews = () => {
@@ -11,7 +11,7 @@ const Reviews = () => {
       .then((data) => setReviews(data))
   }, [])
   return (
-    <div>
+    <Container>
       <Box sx={{ textAlign: 'center', pb: 2 }}>
         <Typography
           sx={{ my: 5, color: 'success.main', fontWeight: '800' }}
@@ -43,7 +43,7 @@ const Reviews = () => {
           ))}
         </Grid>
       </Box>
-    </div>
+    </Container>
   )
 }
 

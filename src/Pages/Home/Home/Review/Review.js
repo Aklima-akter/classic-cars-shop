@@ -24,7 +24,7 @@ const Review = ({ review }) => {
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {Description}
+            {Description.slice(0, 80)}
           </Typography>
           <Typography gutterBottom variant="h6" component="div">
             {profession}
