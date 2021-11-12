@@ -3,15 +3,35 @@ import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-
+import { makeStyles } from '@mui/styles'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from 'react-router-dom'
 import useAuth from './../../../hooks/useAuth'
-import { Button } from '@mui/material'
+import { Button, useTheme } from '@mui/material'
+import './Navigation.css'
 
 const Navigation = () => {
-  const { user } = useAuth()
+  const { user, logOut } = useAuth()
+  const theme = useTheme()
+  const usestyle = makeStyles({
+    navItem: {
+      color: 'white',
+      textDecoration: 'none',
+    },
+    navIcon: {
+      [theme.breakpoints.up('sm')]: {
+        display: 'none',
+      },
+    },
+    navItemContainer: {
+      [theme.breakpoints.down('sm')]: {
+        display: 'none',
+      },
+    },
+  })
+
+  const { navItem, navIcon } = usestyle()
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ bgcolor: 'success.main' }}>
@@ -22,6 +42,7 @@ const Navigation = () => {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            className={navIcon}
           >
             <MenuIcon />
           </IconButton>
@@ -29,60 +50,29 @@ const Navigation = () => {
             Classic Cars Shop
           </Typography>
 
-          <Link
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-              marginRight: '15px',
-              fontWeight: 600,
-              fontSize: 18,
-            }}
-            to="/home"
-          >
-            Home
+          <Link className={navItem} to="/home">
+            <Button color="inherit">Home</Button>
           </Link>
-          <Link
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-              marginRight: '15px',
-              fontWeight: 600,
-              fontSize: 18,
-            }}
-            to="/allProducts"
-          >
-            Explore
+          <Link className={navItem} to="/allProducts">
+            <Button color="inherit">Explore</Button>
           </Link>
           {user?.email ? (
-            <Link
-              style={{
-                color: 'white',
-                textDecoration: 'none',
-                marginRight: '15px',
-                fontWeight: 600,
-                fontSize: 18,
-              }}
-              to="/dashboard"
-            >
-              Dashboard
-            </Link>
-          ) : (
-            <Link
-              style={{
-                color: 'white',
-                textDecoration: 'none',
-                marginRight: '15px',
-                fontWeight: 600,
-                fontSize: 18,
-              }}
-              to="/login"
-            >
+            <Box>
+              <Link className={navItem} to="/dashboard">
+                <Button color="inherit">Dashboard</Button>
+              </Link>
               <Button
-                style={{ color: 'white', fontWeight: 500, fontSize: 18 }}
+                className={navItem}
+                variant="contained"
                 color="success"
+                onClick={logOut}
               >
-                Login
+                Logout
               </Button>
+            </Box>
+          ) : (
+            <Link className={navItem} to="/login">
+              <Button color="success">Login</Button>
             </Link>
           )}
         </Toolbar>

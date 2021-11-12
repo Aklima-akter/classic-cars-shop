@@ -40,7 +40,7 @@ const AddProducts = () => {
   }
 
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <h2>Add products</h2>
       <form onSubmit={handleAddProducts}>
         <TextField

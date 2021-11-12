@@ -77,7 +77,12 @@ const ManageOrder = () => {
 
   return (
     <>
-      <Typography variant="h3" gutterBottom component="div">
+      <Typography
+        sx={{ textAlign: 'center', mt: 5, color: 'success.main' }}
+        variant="h3"
+        gutterBottom
+        component="div"
+      >
         Manage All Orders
       </Typography>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>

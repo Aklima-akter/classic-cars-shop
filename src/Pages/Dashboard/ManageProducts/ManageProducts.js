@@ -1,4 +1,4 @@
-import { Typography, Box, Grid } from '@mui/material'
+import { Typography, Box, Grid, Container } from '@mui/material'
 
 import React, { useState, useEffect } from 'react'
 import ManageProduct from '../ManageProduct/ManageProduct'
@@ -12,10 +12,15 @@ const ManageProducts = () => {
       .then((data) => setAllProducts(data))
   }, [])
   return (
-    <>
+    <Container>
       <Box sx={{ flexGrow: 1 }}>
         <Typography
-          sx={{ m: 5, textAlign: 'center', fontWeight: '600' }}
+          sx={{
+            m: 5,
+            textAlign: 'center',
+            fontWeight: '600',
+            color: 'success.main',
+          }}
           gutterBottom
           variant="h4"
           component="div"
@@ -37,7 +42,7 @@ const ManageProducts = () => {
           ))}
         </Grid>
       </Box>
-    </>
+    </Container>
   )
 }
 

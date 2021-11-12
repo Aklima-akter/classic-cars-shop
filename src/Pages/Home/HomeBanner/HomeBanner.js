@@ -1,7 +1,8 @@
-import { Button, Grid, Typography } from '@mui/material'
+import { Button, Grid, Typography, useTheme } from '@mui/material'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { makeStyles } from '@mui/styles'
 
 const homeBg = {
   background: `url('https://i.ibb.co/wQrXxRS/retro-car-club-background-1284-48416.jpg')`,
@@ -12,8 +13,18 @@ const homeBg = {
 }
 
 const HomeBanner = () => {
+  const theme = useTheme()
+  const useStyle = makeStyles({
+    Containers: {
+      [theme.breakpoints.down('sm')]: {
+        textAlign: 'center',
+        margin: '9',
+      },
+    },
+  })
+  const { Containers } = useStyle()
   return (
-    <div style={homeBg}>
+    <div className={Containers} style={homeBg}>
       <Grid container spacing={2}>
         <Grid style={{ margin: 'auto', color: 'white' }} item xs={12} md={6}>
           <Grid style={{ margin: '150px auto' }} item xs={12} md={6}>
@@ -36,14 +47,6 @@ const HomeBanner = () => {
             </Link>
           </Grid>
         </Grid>
-        {/* <Grid item xs={12} md={6}>
-          <img
-            sx={{ boxShadow: 3 }}
-            style={{ width: '90%', marginTop: '50px' }}
-            src="https://i.ibb.co/bH2smfP/Ho.jpg"
-            alt=""
-          />
-        </Grid> */}
       </Grid>
     </div>
   )

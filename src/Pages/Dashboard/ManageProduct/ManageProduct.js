@@ -51,7 +51,7 @@ const ManageProduct = ({ allProduct, allProducts, setAllProducts }) => {
             onClick={() => handleDeleteProducts(allProduct._id)}
             sx={{ px: 3 }}
             variant="contained"
-            color="success"
+            color="error"
           >
             Delete
           </Button>

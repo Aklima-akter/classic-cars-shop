@@ -38,7 +38,7 @@ const MakeAdmin = () => {
     e.preventDefault()
   }
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <h2>Make an Admin</h2>
       <form onSubmit={handleAdminSubmit}>
         <TextField
@@ -50,7 +50,7 @@ const MakeAdmin = () => {
         />
         <br />
         <Button
-          sx={{ ml: 5 }}
+          sx={{ ml: 5, width: '25%' }}
           type="submit"
           variant="contained"
           color="success"
