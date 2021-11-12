@@ -40,7 +40,7 @@ const AddReview = () => {
     console.log(product)
   }
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <Typography
         sx={{ my: 5, color: 'success.main', fontWeight: '800' }}
         variant="h4"

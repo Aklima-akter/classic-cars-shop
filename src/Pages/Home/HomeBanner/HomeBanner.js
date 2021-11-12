@@ -39,7 +39,7 @@ const HomeBanner = () => {
               confidence in the One-Family-Owned 1951 Kaiser Special.
             </Typography>
 
-            <Link style={{ textDecoration: 'none' }} to="/products">
+            <Link style={{ textDecoration: 'none' }} to="/allProducts">
               <Button sx={{ px: 3 }} variant="contained" color="success">
                 Explore
                 <ArrowRightAltIcon />

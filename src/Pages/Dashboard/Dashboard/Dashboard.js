@@ -68,11 +68,6 @@ function Dashboard(props) {
       )}
       {!admin && (
         <Box>
-          <Link style={{ textDecoration: 'none' }} to="/allProducts">
-            <Button style={{ fontWeight: 500, fontSize: 18 }} color="success">
-              AllProducts
-            </Button>
-          </Link>
           <Link style={{ textDecoration: 'none' }} to={`${url}/myOrder`}>
             <Button style={{ fontWeight: 500, fontSize: 18 }} color="success">
               My Order

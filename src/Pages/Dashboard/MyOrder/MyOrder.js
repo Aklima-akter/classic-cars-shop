@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material'
+import { Button, Container, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useState, useEffect } from 'react'
 import useAuth from '../../../hooks/useAuth'
@@ -48,8 +48,8 @@ const MyOrder = () => {
     })
   }
   return (
-    <>
-      <Typography variant="h3" gutterBottom component="div">
+    <Container sx={{ textAlign: 'center' }}>
+      <Typography sx={{ my: 3 }} variant="h3" gutterBottom component="div">
         My All Orders
       </Typography>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -80,7 +80,7 @@ const MyOrder = () => {
           </Box>
         ))}
       </div>
-    </>
+    </Container>
   )
 }
 

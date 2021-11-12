@@ -17,6 +17,7 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [authError, setAuthError] = useState('')
   const [admin, setAdmin] = useState(false)
+  // console.log(user)
 
   const auth = getAuth()
   const googleProvider = new GoogleAuthProvider()
@@ -54,9 +55,14 @@ const useFirebase = () => {
     setIsLoading(true)
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const destination = location?.state?.from || '/'
-        history.replace(destination)
+        const destination1 = location?.state?.from || '/'
+        const destination2 = '/dashboard'
 
+        if (user?.email && user.role === 'admin') {
+          history.push(destination2)
+        } else {
+          history.push(destination1)
+        }
         setAuthError('')
         // ...
       })
@@ -73,8 +79,13 @@ const useFirebase = () => {
         // setUser(result.user)
         saveUser(result.user.email, result.user.displayName, 'PUT')
         setAuthError('')
-        const destination = location?.state?.from || '/'
-        history.replace(destination)
+        const destination1 = location?.state?.from || '/'
+        const destination2 = '/dashboard'
+        if (user?.email && user.role === 'admin') {
+          history.replace(destination2)
+        } else {
+          history.replace(destination1)
+        }
         // ...
       })
       .catch((error) => {

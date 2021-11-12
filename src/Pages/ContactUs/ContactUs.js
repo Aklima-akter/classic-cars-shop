@@ -8,7 +8,13 @@ const ContactUs = () => {
     e.preventDefault()
   }
   return (
-    <Container style={{ backgroundColor: 'green', textAlign: 'center' }}>
+    <Container
+      style={{
+        backgroundColor: 'green',
+        textAlign: 'center',
+        paddingTop: '20px',
+      }}
+    >
       <Box>
         <Typography sx={{ color: 'white' }} variant="h4" component="div">
           Always Contact with us
